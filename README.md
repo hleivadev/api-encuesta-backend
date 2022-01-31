@@ -14,3 +14,6 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 al tener la DB ejecutar backend para generar JPA en basede datos, se crearan las tablas de manera automatica
 
 fue desarrolado en intellij IDE
+
+
+**NO alcance a implementar las test unit
