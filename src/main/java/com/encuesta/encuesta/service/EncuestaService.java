@@ -43,4 +43,13 @@ public class EncuestaService {
         return encuestaRepository.save(encuesta);
     }
 
+    /**
+     * valida si existe en bd el email
+     * @param email
+     * @return
+     */
+    public String findByEmail(String email){
+        return encuestaRepository.findByEmail(email);
+    }
+
 }

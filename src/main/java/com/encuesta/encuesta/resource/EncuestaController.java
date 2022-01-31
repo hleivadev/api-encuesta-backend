@@ -38,8 +38,8 @@ public class EncuestaController {
 
     /**
      * Controlador para guardar encuestas
-     * @param encuesta
-     * @return
+     * //@param encuesta
+     * //@return
      */
     @CrossOrigin()
     @PostMapping("/add")
@@ -47,5 +47,18 @@ public class EncuestaController {
         Encuesta  newEncuesta = encuestaService.addEncuesta(encuesta);
         return new ResponseEntity<>(newEncuesta, HttpStatus.CREATED);
     }
+
+    /**
+     * verifica si el mail existe
+     * @param email
+     * @return
+     */
+    @CrossOrigin()
+    @GetMapping("/email")
+    public ResponseEntity<String> findByEmail(@RequestParam( name="email",required = true)String email) {
+        String emailResponse = encuestaService.findByEmail(email);
+        return new ResponseEntity<>(emailResponse,emailResponse == null || emailResponse.isEmpty() ? HttpStatus.NOT_FOUND : HttpStatus.OK);
+    }
+
 
 }
